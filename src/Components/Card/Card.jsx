@@ -30,6 +30,7 @@ const Card = () => {
         
         ><FaArrowCircleRight />Descripción</button>
       </div>
+     
     </motion.div>
   );
 };
