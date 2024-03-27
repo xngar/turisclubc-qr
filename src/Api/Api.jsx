@@ -1,36 +1,29 @@
-import axios from "axios"
+import axios from "axios";
 
+ const obtenerToken = async ()=>{
 
-
-
-export const obtenerToken = async (usuario)=>{
-    const auth =await axios.post('https://apirest.turisclub.cl/api/auth',usuario);
+    const usuario = {
+        "Username": process.env.REACT_APP_API_TURISCLUB_USERNAME,
+        "Password": process.env.REACT_APP_API_TURISCLUB_PASSWORD
+      }
+    const auth = await axios.post(`https://apirest.turisclub.cl/api/auth`,usuario);
 
     return auth;
 
 }
 
 export const obtenerQR = async ()=>{
-    const datoken = {
-        "Username": "Test1",
-        "Password": "testing.2022"
-      }
-    const datoToken = await obtenerToken(datoken)
+   //obtenemos el ttoken sin pasarle parametros.
+    const datoToken = await obtenerToken();
 
-    console.log("token",datoToken.data.value);
+  const config =  {
+        headers: {
+        'Authorization': `Bearer ${datoToken.data.value}`,
+        'Content-Type': 'application/json'
+        }
+    }
+    const qr = await axios.post(`https://apirest.turisclub.cl/api/QRContent/List`, {Take: 1,Sort: ["Id DESC"]}, config);
+    const result = await qr.data;
 
-    const qr = await axios.post('https://apirest.turisclub.cl/api/QRContent/List',{
-        headers:{
-            'Authorization': `Bearer ${datoToken.data.value}`,
-            'Content-type':'application/json'
-        },
-        body: JSON.stringify({
-            Take: 1,
-            Sort: ["Id DESC"],
-        })
-    })
-
-    console.log("qr",qr)
-    return qr;
-    
-}
+    return result.entities;
+    }
