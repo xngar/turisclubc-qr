@@ -63,6 +63,10 @@
     color:white;
     font-weight: bold;
     transition: all ease-in-out .3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:5px;
 
 }
 
