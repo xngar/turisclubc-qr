@@ -8,7 +8,7 @@ import axios from "axios";
       }
     const auth = await axios.post(`https://apirest.turisclub.cl/api/auth`,usuario);
 
-    return auth;
+    return auth.data;
 
 }
 
@@ -18,12 +18,11 @@ export const obtenerQR = async ()=>{
 
   const config =  {
         headers: {
-        'Authorization': `Bearer ${datoToken.data.value}`,
+        'Authorization': `Bearer ${datoToken.value}`,
         'Content-Type': 'application/json'
         }
     }
     const qr = await axios.post(`https://apirest.turisclub.cl/api/QRContent/List`, {Take: 1,Sort: ["Id DESC"]}, config);
     const result = await qr.data;
-
     return result.entities;
     }
