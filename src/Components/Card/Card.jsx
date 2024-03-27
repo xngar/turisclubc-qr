@@ -17,14 +17,18 @@ const Card = () => {
     className="card">
       <img src="https://a.travel-assets.com/findyours-php/viewfinder/images/res70/506000/506675-pont-neuf.jpg" />
       <div className="card-top">
-        <h2>Playa del Carmén</h2>
-        <h3><IoSunnySharp /> 8 días / <MdNightlight /> 7 noches</h3>
+        <h2
+      
+        >Playa del Carmén</h2>
+        <h3><IoSunnySharp /> 8 días <br/> <MdNightlight /> 7 noches</h3>
       </div>
       <div className="card-bottom">
         <div></div>
         <p><IoIosInformationCircle /> Precio por persona en base doble desde</p>
         <p>USDT: 1699</p>
-        <button><FaArrowCircleRight /> Ir a Descripción</button>
+        <button
+        
+        ><FaArrowCircleRight />Descripción</button>
       </div>
     </motion.div>
   );
