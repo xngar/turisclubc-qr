@@ -32,6 +32,7 @@ const obtenerQR = async () => {
     },
   };
 
+  
 
 
   const qr = await axios.post(
