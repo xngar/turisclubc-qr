@@ -2,6 +2,7 @@ import { obtenerListado, obtenerQR, obtenerToken } from "./Api/Api";
 import "./App.css";
 import Card from "./Components/Card/Card";
 import { useQuery, useMutation } from "react-query";
+import Logo from "./img/logo.png"
 
 function App() {
   const listadoQR = useQuery({
@@ -11,7 +12,7 @@ function App() {
 
   console.log("listado areas", listadoQR);
 
-  if (listadoQR.isLoading) return <div>Cargando información...</div>
+  if (listadoQR.isLoading) return <div className="loaderIntro"><img src={Logo} /></div>
   if (listadoQR.isError) return <div>Hubo un problema</div>
   return (
     <div className="App">
