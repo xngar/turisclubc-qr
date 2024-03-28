@@ -16,7 +16,8 @@
   box-sizing: border-box;
 }
 .grilla{
-  display: flex;
+  
+  display: grid;
   
   
 }
