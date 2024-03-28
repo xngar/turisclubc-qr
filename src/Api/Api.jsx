@@ -51,7 +51,7 @@ const obtenerQR = async () => {
 export const obtenerListado = async () => {
   const nuevoObj = {
     titulo: "",
-    listaProgramadas: [],
+    listaProgramas: [],
   };
 
   const idArea = await obtenerQR();
@@ -74,6 +74,6 @@ export const obtenerListado = async () => {
   );
   var result = await listaProgramas;
   nuevoObj.titulo = idArea.entities[0].Titulo;
-  nuevoObj.listaProgramadas = result.data.entities;
+  nuevoObj.listaProgramas = result.data.entities;
   return nuevoObj;
 };

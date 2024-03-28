@@ -25,7 +25,7 @@ const Card = ({titulo, noche, dia, precio,imagen,id}) => {
       <div className="card-bottom">
         <div></div>
         <p><IoIosInformationCircle /> Precio por persona en base doble desde</p>
-        <p>USD: ${precio}</p>
+        <p>{precio}</p>
         
         <a href={`https://turisclub.cl/programa/${id}`}><button
         

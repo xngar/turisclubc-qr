@@ -10,7 +10,13 @@ function App() {
     queryFn: () => obtenerListado(),
   });
 
-  console.log("listado areas", listadoQR);
+  const formatter = new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency: 'USD',
+    minimumFractionDigits: 0
+});
+
+
 
   if (listadoQR.isLoading) return <div className="loaderIntro"><img src={Logo} /></div>
   if (listadoQR.isError) return <div>Hubo un problema</div>
@@ -19,14 +25,14 @@ function App() {
       {/* <h1>{listadoQR.data.titulo}</h1> */}
 
 
-      {listadoQR.data.listaProgramadas.map((lista) => {
+      {listadoQR.data.listaProgramas?.map((lista) => {
         return (
           <div className="grilla">
             <Card
               titulo={lista.Titulo}
               dia={lista.Dias}
               noche={lista.Noches}
-              precio={lista.PrecioUsd}
+              precio={formatter.format(lista.PrecioUsd).replace("$", "USD ").replace(",", ".")}
               imagen={lista.Imagen}
               id={lista.Id}
             />
