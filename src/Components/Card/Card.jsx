@@ -6,7 +6,7 @@ import { MdNightlight } from "react-icons/md";
 import { IoIosInformationCircle } from "react-icons/io";
 import {easeIn, motion} from "framer-motion";
 
-const Card = () => {
+const Card = ({titulo, noche, dia, precio,imagen,id}) => {
   return (
     <motion.div
     initial={{opacity:0, top:10}}
@@ -15,20 +15,21 @@ const Card = () => {
 
 
     className="card">
-      <img src="https://a.travel-assets.com/findyours-php/viewfinder/images/res70/506000/506675-pont-neuf.jpg" />
+      <img  src={`https://turisclub.cl/upload/${imagen}`} />
       <div className="card-top">
         <h2
       
-        >Playa del Carmén</h2>
-        <h3><IoSunnySharp /> 8 días <br/> <MdNightlight /> 7 noches</h3>
+        >{titulo}</h2>
+        <h3><IoSunnySharp /> {dia} días <br/> <MdNightlight /> {noche} noches</h3>
       </div>
       <div className="card-bottom">
         <div></div>
         <p><IoIosInformationCircle /> Precio por persona en base doble desde</p>
-        <p>USDT: 1699</p>
-        <button
+        <p>USDT: $ {precio}</p>
         
-        ><FaArrowCircleRight />Descripción</button>
+        <a href={`https://turisclub.cl/programa/${id}`}><button
+        
+        ><FaArrowCircleRight />Descripción</button></a>
       </div>
      
     </motion.div>
