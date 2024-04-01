@@ -20,6 +20,7 @@ const Card = ({titulo, noche, dia, precio, precioTxt,imagen,id}) => {
       <div className="card-top">
         <h2
       
+      
         >{titulo}</h2>
         <h3><IoSunnySharp /> {dia} días <br/> <MdNightlight /> {noche} noches</h3>
       </div>
