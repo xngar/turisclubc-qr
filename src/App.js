@@ -22,29 +22,46 @@ function App() {
   // const agrupados = Object.groupBy(listadoQR.data.listaProgramas, (id) => id.IdDestino);
 
 
+  const programasAgrupados = listadoQR.data?.listaProgramas?.reduce((acc, programa) => {
+    const idDestino = programa.Destino;
+    if (!acc[idDestino]) {
+      acc[idDestino] = [];
+    }
+    acc[idDestino].push(programa);
+    return acc;
+  }, {});
+
+
+
+
+
   if (listadoQR.isLoading) return <div className="loaderIntro"><img src={Logo} /></div>
   if (listadoQR.isError) return <div>Hubo un problema</div>
+
   return (
     <div className="App">
-      {/* <h1>{listadoQR.data.titulo}</h1> */}
-
-
-      {listadoQR.data.listaProgramas?.map((lista) => {
-        return (
-          <div className="grilla">
-            <Card
-              titulo={lista.Titulo}
-              dia={lista.Dias}
-              noche={lista.Noches}
-              precio={formatter.format(lista.PrecioUsd).replace("$", "USD ").replace(",", ".")}
-              imagen={lista.Imagen}
-              id={lista.Id}
-            />
-          </div>
-        );
-      })}
+      {Object.keys(programasAgrupados).map(idDestino => (
+        <div key={idDestino}>
+          <h2>Destino {idDestino}</h2>
+          {programasAgrupados[idDestino].map((programa, index) => (
+            <div className="grilla" key={index}>
+              <Card
+                titulo={programa.Titulo}
+                dia={programa.Dias}
+                noche={programa.Noches}
+                precio={formatter.format(programa.PrecioUsd).replace("$", "USD ").replace(",", ".")}
+                imagen={programa.Imagen}
+                id={programa.Id}
+              />
+            </div>
+          ))}
+        </div>
+      ))}
     </div>
   );
+
+
+
 }
 
 export default App;
