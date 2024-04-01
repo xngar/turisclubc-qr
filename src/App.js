@@ -46,9 +46,10 @@ function App() {
 
   return (
     <div className="App">
+      <h1 style={{ textAlign: "center" }}>{listadoQR.data.titulo}</h1>
       {Object.keys(programasAgrupados).map(idDestino => (
         <div key={idDestino}>
-          <h2>Destino {idDestino}</h2>
+          <h2 style={{ textAlign: "center" }}> {idDestino}</h2>
           {programasAgrupados[idDestino].map((programa, index) => (
             <div className="grilla" key={index}>
               <Card
