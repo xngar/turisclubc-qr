@@ -37,6 +37,7 @@ function App() {
               dia={lista.Dias}
               noche={lista.Noches}
               precio={formatter.format(lista.PrecioUsd).replace("$", "USD ").replace(",", ".")}
+              precioTxt={lista.PrecioTxt}
               imagen={lista.Imagen}
               id={lista.Id}
             />
