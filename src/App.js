@@ -14,8 +14,12 @@ function App() {
     style: 'currency',
     currency: 'USD',
     minimumFractionDigits: 0
-});
+  });
 
+
+
+
+  // const agrupados = Object.groupBy(listadoQR.data.listaProgramas, (id) => id.IdDestino);
 
 
   if (listadoQR.isLoading) return <div className="loaderIntro"><img src={Logo} /></div>
