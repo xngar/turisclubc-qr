@@ -25,7 +25,6 @@ function App() {
   const programasAgrupados = listadoQR.data?.listaProgramas?.reduce((acc, programa) => {
     const idDestino = programa.Destino;
 
-
     if (!acc[idDestino]) {
       acc[idDestino] = [];
     }
@@ -33,10 +32,6 @@ function App() {
 
     return acc;
   }, {});
-
-
-
-
 
 
 
@@ -56,6 +51,7 @@ function App() {
                 dia={programa.Dias}
                 noche={programa.Noches}
                 precio={formatter.format(programa.PrecioUsd).replace("$", "USD ").replace(",", ".")}
+                precioTxt={programa.PrecioTxt}
                 imagen={programa.Imagen}
                 id={programa.Id}
               />
