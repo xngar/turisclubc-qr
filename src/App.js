@@ -25,21 +25,15 @@ function App() {
   const programasAgrupados = listadoQR.data?.listaProgramas?.reduce((acc, programa) => {
     const idDestino = programa.Destino;
 
-    console.log(idDestino);
     if (!acc[idDestino]) {
       acc[idDestino] = [];
     }
     acc[idDestino].push(programa);
-    console.log("acumulador", acc[idDestino]);
-    console.log(acc);
+   
     return acc;
   }, {});
 
 
-
-
-
-  console.log(Object.values(programasAgrupados).map(idDestino => idDestino));
 
   if (listadoQR.isLoading) return <div className="loaderIntro"><img src={Logo} /></div>
   if (listadoQR.isError) return <div>Hubo un problema</div>
@@ -57,6 +51,7 @@ function App() {
                 dia={programa.Dias}
                 noche={programa.Noches}
                 precio={formatter.format(programa.PrecioUsd).replace("$", "USD ").replace(",", ".")}
+                precioTxt={programa.PrecioTxt}
                 imagen={programa.Imagen}
                 id={programa.Id}
               />
