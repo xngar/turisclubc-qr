@@ -6,7 +6,7 @@ import { MdNightlight } from "react-icons/md";
 import { IoIosInformationCircle } from "react-icons/io";
 import {easeIn, motion} from "framer-motion";
 
-const Card = ({titulo, noche, dia, precio,imagen,id}) => {
+const Card = ({titulo, noche, dia, precio,precioTxt,imagen,id}) => {
   return (
     <motion.div
     initial={{opacity:0, top:10}}
@@ -24,7 +24,7 @@ const Card = ({titulo, noche, dia, precio,imagen,id}) => {
       </div>
       <div className="card-bottom">
         <div></div>
-        <p><IoIosInformationCircle /> Precio por persona en base doble desde</p>
+        <p><IoIosInformationCircle /> {precioTxt}</p>
         <p>{precio}</p>
         
         <a href={`https://turisclub.cl/programa/${id}`}><button
