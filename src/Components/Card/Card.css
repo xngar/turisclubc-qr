@@ -214,6 +214,7 @@ background: linear-gradient(0deg, rgba(43,159,219,1) 0%, rgba(245,65,62,0) 53%);
         text-shadow: 1px 1px 1px black;
         font-weight: bold;
         text-align: center;
+        margin-top: 14px;
     }
 
 
