@@ -144,7 +144,7 @@ background: linear-gradient(0deg, rgba(43,159,219,1) 0%, rgba(245,65,62,0) 53%);
     }
     
     .card-top h3{
-        font-size: 14px;
+        font-size: 20px;
         margin-top: 10px;
         text-shadow: 1px 1px 2px black;
         color:white;
@@ -183,18 +183,7 @@ background: linear-gradient(0deg, rgba(43,159,219,1) 0%, rgba(245,65,62,0) 53%);
         font-size: 13px;
     }
 
-    .card-bottom p:nth-child(2){
-        text-shadow: 1px 1px 2px black;
-        font-weight: bold;
-        color:white;
-        background-color: #FF2900;
-        width: fit-content;
-        padding: 10px;
-        border-radius: 20px;
-        margin-top: 10px;
-        font-size: 20px;
-        
-    }
+  
     
     .card-bottom p:nth-child(3){
         background-color: white;
@@ -203,7 +192,8 @@ background: linear-gradient(0deg, rgba(43,159,219,1) 0%, rgba(245,65,62,0) 53%);
         border-radius: 10px;
         color: #FF2900;
         font-weight: bold;
-        margin-top:60px;
+        margin-top:20px;
+        font-size: 20px;
     }
 
     .card-descripcion{
@@ -218,7 +208,9 @@ background: linear-gradient(0deg, rgba(43,159,219,1) 0%, rgba(245,65,62,0) 53%);
 
     .precioTexto{
         color:white;
-        text-shadow: 1px 1px 2px black;
+        text-shadow: 1px 1px 1px black;
+        font-weight: bold;
+        text-align: center;
     }
 
 

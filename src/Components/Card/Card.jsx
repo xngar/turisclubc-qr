@@ -20,7 +20,7 @@ const Card = ({titulo, noche, dia, precio, precioTxt,imagen,id,descripcion}) => 
       <div className="card-top">
         <h2>{titulo}</h2>
         <h3><IoSunnySharp /> {dia} días <br/> <MdNightlight /> {noche} noches</h3>
-        <p className="precioTexto"><IoIosInformationCircle /> {precioTxt}</p>
+        
       </div>
       <div className="card-descripcion">
         {descripcion?.map((mapeo) => (
@@ -33,7 +33,7 @@ const Card = ({titulo, noche, dia, precio, precioTxt,imagen,id,descripcion}) => 
       </div>
       <div className="card-bottom">
         <div></div>
-       
+        <p className="precioTexto" style={{fontSize:'14px'}}><IoIosInformationCircle /> {precioTxt}</p>
         <p>{precio}</p>
         
         <a href={`https://turisclub.cl/programa/${id}`}><button
