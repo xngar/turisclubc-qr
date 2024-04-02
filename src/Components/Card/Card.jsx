@@ -23,7 +23,7 @@ const Card = ({titulo, noche, dia, precio, precioTxt,imagen,id,descripcion}) => 
         
       </div>
       <div className="card-descripcion">
-        {descripcion?.map((mapeo) => (
+        {descripcion?.sort((a,b) => a.Orden - b.Orden).map((mapeo) => (
          <ul>
           <li>{mapeo.TextoIncluye}</li>
          </ul>
