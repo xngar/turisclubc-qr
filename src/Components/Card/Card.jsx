@@ -6,7 +6,7 @@ import { MdNightlight } from "react-icons/md";
 import { IoIosInformationCircle } from "react-icons/io";
 import {easeIn, motion} from "framer-motion";
 
-const Card = ({titulo, noche, dia, precio, precioTxt,imagen,id}) => {
+const Card = ({titulo, noche, dia, precio, precioTxt,imagen,id,descripcion}) => {
   return (
     <motion.div
     initial={{opacity:0, top:10}}
@@ -18,15 +18,22 @@ const Card = ({titulo, noche, dia, precio, precioTxt,imagen,id}) => {
       <a href={`https://turisclub.cl/programa/${id}`}>
       <img  src={`https://turisclub.cl/upload/${imagen}`} />
       <div className="card-top">
-        <h2
-      
-      
-        >{titulo}</h2>
+        <h2>{titulo}</h2>
         <h3><IoSunnySharp /> {dia} días <br/> <MdNightlight /> {noche} noches</h3>
+        <p className="precioTexto"><IoIosInformationCircle /> {precioTxt}</p>
+      </div>
+      <div className="card-descripcion">
+        {descripcion?.map((mapeo) => (
+         <ul>
+          <li>{mapeo.TextoIncluye}</li>
+         </ul>
+          )
+          )}
+
       </div>
       <div className="card-bottom">
         <div></div>
-        <p><IoIosInformationCircle /> {precioTxt}</p>
+       
         <p>{precio}</p>
         
         <a href={`https://turisclub.cl/programa/${id}`}><button
